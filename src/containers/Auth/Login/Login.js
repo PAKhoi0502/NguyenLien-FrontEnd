@@ -58,7 +58,8 @@ class Login extends Component {
                isLoading: false
             });
          } else if (data && data.errCode === 0) {
-            this.props.adminLoginSuccess(data.user);
+            // Lưu thông tin đăng nhập và role
+            this.props.adminLoginSuccess(data.user);  // Đây sẽ chứa thông tin user và role
             this.setState({
                isLoading: false,
                errMessage: '',
@@ -79,7 +80,6 @@ class Login extends Component {
          });
       }
    }
-
 
    handleShowHidePassword = () => {
       this.setState((prevState) => ({
